@@ -1,6 +1,6 @@
 ### docker-machine
 *	**ls**  
- 		lists avilable (running & non-running) docker machines (virtual machines created by docker-machine)
+ 		lists available (running & non-running) docker machines (virtual machines created by docker-machine)
 *	**create --driver virtualbox _myvm_**  
 		downloads a lightweight Linux distribution (boot2docker) with the Docker daemon installed  
 		creates a machines with the name myvm using virtualbox as a driver  
@@ -9,19 +9,19 @@
 		creates a machines with the name myvm using virtualbox as a driver  
 		configures insecure connection to pvtdockerrepo docker registry  
 *	**ip _myvm_**  
-		gets the ip of the virutal machine
+		gets the ip of the virtual machine
 *	**active**  
 		shows active virtual machine
 *	**stop _myvm_**  
 		stops the virtual machine
 *	**inspect _myvm_**  
-		shows the deatils of the virtual machine
+		shows the details of the virtual machine
 *	**rm _myvm_**  
 		removes the virtual machine
 *	**@FOR /f "tokens=*" %i IN ('docker-machine env --shell cmd _myvm_') DO @%i**  
 		connects to myvm machine (env variables need to be set) and makes it active machine (on cmd.exe)
 *	**env _myvm_ --shell powershell | Invoke-Expression**  
-		connects to myvm machine (env variables need to be set) and make it active machine (on powershell)
+		connects to myvm machine (env variables need to be set) and make it active machine (on PowerShell)
 *	**start _myvm_**  
 		starts the machine
 *	**stop _myvm_**  
@@ -35,15 +35,15 @@
 *	**version**  
 		docker server and client version
 *	**ps**  
-		list the running containers (e.g. mysql)
+		list the running containers (e.g. MySql)
 *	**ps -a**  
 		list all the running and non-running containers
 *	**run _imagename_**  
-		start a contianer for the image
+		start a container for the image
 *	**run -d _imagename_**  
-		start a contianer for the image in daemon mode
+		start a container for the image in daemon mode
 *	**run -d -p _hostport_:_containerport_ _imagename_**  
-		start a contianer for the image  in daemon mode and map the port to host port
+		start a container for the image  in daemon mode and map the port to host port
 *	**pull _pvtdockerrepo:5000_/_myapp:latest_**  
 		pull image from pvtdockerrepo registry
 *	**images**  
@@ -51,7 +51,7 @@
 *	**build -t _imagename_ .**  
 		creates an image with name imagename using docker file in the current folder  
 		Note: only the folders required for image should be present in the folder  
-		, where the dockerfile is present. Otherwise, build tries to compress complete parent folder.  
+		, where Dockerfile is present. Otherwise, build tries to compress complete parent folder.  
 *	**build -t _pvtdockerrepo:5000_/_imagename:latest_**  
 		creates an image with name imagename (and tags it with repo name) using docker file in the current folder
 *	**docker tag _imagename:latest_ _pvtdockerrepo:5000_/_imagename:latest_**  
