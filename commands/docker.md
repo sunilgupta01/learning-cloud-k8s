@@ -3,7 +3,8 @@
 		list of avilable (running) machines (virtualboxes)
 	create --driver virtualbox myvm
 		creates a machines with the myvm using virtualbox as a driver
-		This command downloads a lightweight Linux distribution (boot2docker) with the Docker daemon installed, and creates and starts a VirtualBox VM with Docker running.
+		This command downloads a lightweight Linux distribution (boot2docker) with the Docker daemon installed
+		, and creates and starts a VirtualBox VM with Docker running.
 	create --driver virtualbox --engine-insecure-registry pvtdockerrepo:5000 newmyvm
 		creates machine with insecure connection to mentioned registry
 		This is for connecting to registry on pvtdockerrepo that is currently insecure.
@@ -26,7 +27,8 @@
 	stop myvm
 		stop the machine
 	regenerate-certs myvm
-		regenerate certificates. it's required when there is ip mismatch (because IP is assigned at VM startup and it might change between restarts)
+		regenerate certificates.
+		it's required when there is ip mismatch (because IP is assigned at VM startup and it might change between restarts)
 		
 # docker
 	version
@@ -47,7 +49,8 @@
 		show list of available images
 	build -t imagename .
 		creates an image with name imagename using docker file in the current folder
-		Note: only the folders required for image should be present in the folder, where the dockerfile is present. Otherwise, build tries to compress complete parent folder.
+		Note: only the folders required for image should be present in the folder
+		, where the dockerfile is present. Otherwise, build tries to compress complete parent folder.
 	build -t pvtdockerrepo:5000/imagename:latest
 		creates an image with name imagename (and tags it with repo name) using docker file in the current folder
 	docker tag imagename:latest localhost:5000/imagename:latest
