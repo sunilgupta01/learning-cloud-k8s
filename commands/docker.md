@@ -17,25 +17,18 @@
 		shows the complete list of deatils of the machine
 	rm myvm
 		removes the machine
-	#Connect to myvm machine (env variables need to be set) ...use export instead of SET for powershell?. Set is used in cmd
-		SET DOCKER_TLS_VERIFY=1
-		SET DOCKER_HOST=tcp://192.168.99.102:2376
-		SET DOCKER_CERT_PATH=C:\Users\sunil_gupta01\.docker\machine\machines\myvm
-		SET DOCKER_MACHINE_NAME=myvm
-	#or it could be done via single line in powershell 
-		env myvm --shell powershell | Invoke-Expression	
-			make myvm as the active machine in powershell
-	#or it could be done via single line in cmd
-		@FOR /f "tokens=*" %i IN ('docker-machine env --shell cmd myvm') DO @%i
+	@FOR /f "tokens=*" %i IN ('docker-machine env --shell cmd myvm') DO @%i
+		connect to myvm machine (env variables need to be set) and make it active machine (on cmd.exe)
+	env myvm --shell powershell | Invoke-Expression	
+		connect to myvm machine (env variables need to be set) and make it active machine (on powershell)
 	start myvm
 		start the machine
 	stop myvm
 		stop the machine
 	regenerate-certs myvm
-		regenerate certificates - it's required when there is ip mismatch
+		regenerate certificates. it's required when there is ip mismatch (because IP is assigned at VM startup and it might change between restarts)
 		
-For machines other than default, and commands other than those listed above, you must always specify the name explicitly as an argument.
-#docker
+# docker
 	version
 		docker server and client version
 	ps
@@ -69,6 +62,6 @@ For machines other than default, and commands other than those listed above, you
 	rmi imageid
 		remove the image with the mentioned imageid
 
-#docker-compose
+# docker-compose
 	-f docker-composeymlfilepath up -d
 	
