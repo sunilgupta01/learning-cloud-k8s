@@ -4,9 +4,9 @@
 	create --driver virtualbox myvm
 		creates a machines with the myvm using virtualbox as a driver
 		This command downloads a lightweight Linux distribution (boot2docker) with the Docker daemon installed, and creates and starts a VirtualBox VM with Docker running.
-	create --driver virtualbox --engine-insecure-registry dockerrepo:5000 newmyvm
+	create --driver virtualbox --engine-insecure-registry pvtdockerrepo:5000 newmyvm
 		creates machine with insecure connection to mentioned registry
-		This is for connecting to registry on dockerrepo that is currently insecure.
+		This is for connecting to registry on pvtdockerrepo that is currently insecure.
 	ip myvm
 		get the ip of virutal machine name
 	active
@@ -41,8 +41,8 @@
 		start a contianer for the image in daemon mode
 	run -d -p hostport:containerport imagename
 		start a contianer for the image  in daemon mode and map the port to host port
-	pull dockerrepo:5000/myapp:latest
-		pull image from dockerrepo registry
+	pull pvtdockerrepo:5000/myapp:latest
+		pull image from pvtdockerrepo registry
 	images
 		show list of available images
 	build -t amcharts .
