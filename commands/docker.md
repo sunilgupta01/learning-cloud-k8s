@@ -57,7 +57,11 @@
 	exec -it containername /bin/bash
 		get inside running container 
 	logs containername
-		view the running logs of the container (does it show last line?)
+		view the running logs of the container
+	logs containername -f --tail 10
+		view the running logs of the container
+		keep following logs
+		start followings logs from last 10 lines of the logs
 	kill containername
 		kill the docker container with name containername
 	rm containerid
