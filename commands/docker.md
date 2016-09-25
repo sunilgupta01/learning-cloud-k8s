@@ -1,32 +1,32 @@
 ### docker-machine
-	**ls**  
+*	**ls**  
 		list of avilable (running) machines (virtualboxes)
-	**create --driver virtualbox myvm**  
+*	**create --driver virtualbox myvm**  
 		creates a machines with the myvm using virtualbox as a driver
 		This command downloads a lightweight Linux distribution (boot2docker) with the Docker daemon installed
 		, and creates and starts a VirtualBox VM with Docker running.
-	**create --driver virtualbox --engine-insecure-registry pvtdockerrepo:5000 newmyvm**  
+*	**create --driver virtualbox --engine-insecure-registry pvtdockerrepo:5000 newmyvm**  
 		creates machine with insecure connection to mentioned registry
 		This is for connecting to registry on pvtdockerrepo that is currently insecure.
-	**ip myvm**  
+*	**ip myvm**  
 		get the ip of virutal machine name
-	**active**  
+*	**active**  
 		shows active virtual machine....what does it mean?????
-	stop myvm
+*	**stop myvm**  
 		stops the docker machine
-	inspect myvm
+*	**inspect myvm**  
 		shows the complete list of deatils of the machine
-	rm myvm
+*	**rm myvm**  
 		removes the machine
-	@FOR /f "tokens=*" %i IN ('docker-machine env --shell cmd myvm') DO @%i
+*	**@FOR /f "tokens=*" %i IN ('docker-machine env --shell cmd myvm') DO @%i**  
 		connect to myvm machine (env variables need to be set) and make it active machine (on cmd.exe)
-	env myvm --shell powershell | Invoke-Expression	
+*	**env myvm --shell powershell | Invoke-Expression**  
 		connect to myvm machine (env variables need to be set) and make it active machine (on powershell)
-	start myvm
+*	**start myvm**  
 		start the machine
-	stop myvm
+*	**stop myvm**  
 		stop the machine
-	regenerate-certs myvm
+*	**regenerate-certs myvm**  
 		regenerate certificates.
 		it's required when there is ip mismatch
 		IP might change at VM startup/restart
