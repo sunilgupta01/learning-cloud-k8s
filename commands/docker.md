@@ -28,7 +28,8 @@
 		stop the machine
 	regenerate-certs myvm
 		regenerate certificates.
-		it's required when there is ip mismatch (because IP is assigned at VM startup and it might change between restarts)
+		it's required when there is ip mismatch
+		IP might change at VM startup/restart
 		
 # docker
 	version
