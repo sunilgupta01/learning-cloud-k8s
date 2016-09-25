@@ -1,11 +1,11 @@
 ### docker-machine
-**ls**
-	list of avilable (running) machines (virtualboxes)
-**create --driver virtualbox myvm**
+	ls
+		list of avilable (running) machines (virtualboxes)
+	create --driver virtualbox myvm
 		creates a machines with the myvm using virtualbox as a driver
 		This command downloads a lightweight Linux distribution (boot2docker) with the Docker daemon installed
 		, and creates and starts a VirtualBox VM with Docker running.
-	**create --driver virtualbox --engine-insecure-registry pvtdockerrepo:5000 newmyvm**
+	create --driver virtualbox --engine-insecure-registry pvtdockerrepo:5000 newmyvm
 		creates machine with insecure connection to mentioned registry
 		This is for connecting to registry on pvtdockerrepo that is currently insecure.
 	ip myvm
