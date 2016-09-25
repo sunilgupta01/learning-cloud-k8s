@@ -45,12 +45,15 @@
 		pull image from pvtdockerrepo registry
 	images
 		show list of available images
-	build -t amcharts .
-		creates an image (with name amcharts) using docker file in the current folder
+	build -t imagename .
+		creates an image with name imagename using docker file in the current folder
 		Note: only the folders required for image should be present in the folder, where the dockerfile is present. Otherwise, build tries to compress complete parent folder.
-	#push image (and create repository) to a registry
-		docker tag mysql:latest localhost:5000/mysql:latest
-		docker push localhost:5000/mysql:latest
+	build -t pvtdockerrepo:5000/imagename:latest
+		creates an image with name imagename (and tags it with repo name) using docker file in the current folder
+	docker tag imagename:latest localhost:5000/imagename:latest
+		tag image
+	docker push localhost:5000/imagename:latest
+		push image to a private docker registry
 	exec -it containername /bin/bash
 		get inside running container 
 	logs containername
@@ -64,4 +67,3 @@
 
 # docker-compose
 	-f docker-composeymlfilepath up -d
-	
