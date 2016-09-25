@@ -76,5 +76,5 @@
 		show the live stream statistics (CPU, memory, IO, network etc.) of all the running containers 
 
 ### docker-compose
-*	**-f _dockercomposeymlfilepath_ up -d**  
-	brings container/s up based on the configuration in dockercomposeymlfilepath (yml file)
+*	**-f _docker-compose-yml-file-path_ up -d**  
+	brings container/s up based on the configuration in the file at path docker-compose-yml-file-path
