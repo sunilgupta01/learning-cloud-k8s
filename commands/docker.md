@@ -1,7 +1,7 @@
 ### docker-machine
-	**ls**
-		list of avilable (running) machines (virtualboxes)
-	**create --driver virtualbox myvm**
+**ls**
+	list of avilable (running) machines (virtualboxes)
+**create --driver virtualbox myvm**
 		creates a machines with the myvm using virtualbox as a driver
 		This command downloads a lightweight Linux distribution (boot2docker) with the Docker daemon installed
 		, and creates and starts a VirtualBox VM with Docker running.
