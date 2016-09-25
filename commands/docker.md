@@ -1,36 +1,36 @@
 ### docker-machine
 *	**ls**  
-		list of avilable (running) machines (virtualboxes_)
+		lists avilable (running & non-running) docker machines (virtual machines created by docker-machine)
 *	**create --driver virtualbox _myvm_**  
-		creates a machines with the myvm using virtualbox as a driver
-		This command downloads a lightweight Linux distribution (boot2docker) with the Docker daemon installed
-		, and creates and starts a VirtualBox VM with Docker running.
+		downloads a lightweight Linux distribution (boot2docker) with the Docker daemon installed  
+		creates a machines with the name myvm using virtualbox as a driver  
 *	**create --driver virtualbox --engine-insecure-registry _pvtdockerrepo:5000_ _newmyvm_**  
-		creates machine with insecure connection to mentioned registry
-		This is for connecting to registry on pvtdockerrepo that is currently insecure.
+		downloads a lightweight Linux distribution (boot2docker) with the Docker daemon installed  
+		creates a machines with the name myvm using virtualbox as a driver  
+		configures insecure connection to pvtdockerrepo docker registry  
 *	**ip _myvm_**  
-		get the ip of virutal machine name
+		gets the ip of the virutal machine
 *	**active**  
-		shows active virtual machine....what does it mean?????
+		shows active virtual machine
 *	**stop _myvm_**  
-		stops the docker machine
+		stops the virtual machine
 *	**inspect _myvm_**  
-		shows the complete list of deatils of the machine
+		shows the deatils of the virtual machine
 *	**rm _myvm_**  
-		removes the machine
+		removes the virtual machine
 *	**@FOR /f "tokens=*" %i IN ('docker-machine env --shell cmd _myvm_') DO @%i**  
-		connect to myvm machine (env variables need to be set) and make it active machine (on cmd.exe)
+		connects to myvm machine (env variables need to be set) and makes it active machine (on cmd.exe)
 *	**env _myvm_ --shell powershell | Invoke-Expression**  
-		connect to myvm machine (env variables need to be set) and make it active machine (on powershell)
+		connects to myvm machine (env variables need to be set) and make it active machine (on powershell)
 *	**start _myvm_**  
-		start the machine
+		starts the machine
 *	**stop _myvm_**  
-		stop the machine
+		stops the machine
 *	**regenerate-certs _myvm_**  
-		regenerate certificates.
-		it's required when there is ip mismatch
+		regenerates certificates  
+		it's required when there is ip mismatch  
 		IP might change at VM startup/restart
-		
+
 ### docker
 *	**version**  
 		docker server and client version
@@ -49,9 +49,9 @@
 *	**images**  
 		show list of available images
 *	**build -t _imagename_ .**  
-		creates an image with name imagename using docker file in the current folder
-		Note: only the folders required for image should be present in the folder
-		, where the dockerfile is present. Otherwise, build tries to compress complete parent folder.
+		creates an image with name imagename using docker file in the current folder  
+		Note: only the folders required for image should be present in the folder  
+		, where the dockerfile is present. Otherwise, build tries to compress complete parent folder.  
 *	**build -t _pvtdockerrepo:5000_/_imagename:latest_**  
 		creates an image with name imagename (and tags it with repo name) using docker file in the current folder
 *	**docker tag _imagename:latest_ _pvtdockerrepo:5000_/_imagename:latest_**  
@@ -77,3 +77,4 @@
 
 ### docker-compose
 *	**-f _dockercomposeymlfilepath_ up -d**  
+	brings container/s up based on the configuration in dockercomposeymlfilepath (yml file)
