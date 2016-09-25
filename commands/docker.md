@@ -1,13 +1,13 @@
 ### docker-machine
 *	**ls**  
-		lists avilable (running & non-running) docker machines (virtual machines created by docker-machine)
+ * lists avilable (running & non-running) docker machines (virtual machines created by docker-machine)
 *	**create --driver virtualbox _myvm_**  
-		downloads a lightweight Linux distribution (boot2docker) with the Docker daemon installed  
-		creates a machines with the name myvm using virtualbox as a driver  
+	*	downloads a lightweight Linux distribution (boot2docker) with the Docker daemon installed  
+	*	creates a machines with the name myvm using virtualbox as a driver  
 *	**create --driver virtualbox --engine-insecure-registry _pvtdockerrepo:5000_ _myvm_**  
-		downloads a lightweight Linux distribution (boot2docker) with the Docker daemon installed  
-		creates a machines with the name myvm using virtualbox as a driver  
-		configures insecure connection to pvtdockerrepo docker registry  
+	*	downloads a lightweight Linux distribution (boot2docker) with the Docker daemon installed  
+	*	creates a machines with the name myvm using virtualbox as a driver  
+	*	configures insecure connection to pvtdockerrepo docker registry  
 *	**ip _myvm_**  
 		gets the ip of the virutal machine
 *	**active**  
