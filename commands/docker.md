@@ -1,4 +1,4 @@
-# docker-machine
+### docker-machine
 	ls
 		list of avilable (running) machines (virtualboxes)
 	create --driver virtualbox myvm
@@ -31,7 +31,7 @@
 		it's required when there is ip mismatch
 		IP might change at VM startup/restart
 		
-# docker
+### docker
 	version
 		docker server and client version
 	ps
@@ -75,5 +75,5 @@
 	stats --all
 		show the live stream statistics (CPU, memory, IO, network etc.) of all the running containers 
 
-# docker-compose
+### docker-compose
 	-f docker-composeymlfilepath up -d
