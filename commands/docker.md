@@ -68,6 +68,8 @@
 		remove the container with the mentioned containerid
 	rmi imageid
 		remove the image with the mentioned imageid
+	stats --all
+		show the live stream statistics (CPU, memory, IO, network etc.) of all the running containers 
 
 # docker-compose
 	-f docker-composeymlfilepath up -d
