@@ -1,4 +1,4 @@
-## Basic commands (with options) of _docker-machine_, _docker_ and _docker-compose_, which have been very handy to me.
+## Handy commands on _docker-machine_, _docker_ and _docker-compose_ for starters.
 ---
 ### docker-machine
 *	**ls**  
