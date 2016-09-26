@@ -1,4 +1,5 @@
 #### Basic commands (with options) of _docker-machine_, _docker_ and _docker-compose_, which have been very handy to me.
+---
 ### docker-machine
 *	**ls**  
  		lists available (running & non-running) docker machines (virtual machines created by docker-machine)
@@ -31,7 +32,7 @@
 		regenerates certificates  
 		it's required when there is ip mismatch  
 		IP might change at VM startup/restart
-
+---
 ### docker
 *	**version**  
 		docker server and client version
@@ -75,7 +76,7 @@
 		remove the image with the mentioned imageid
 *	**stats --all**  
 		show the live stream statistics (CPU, memory, IO, network etc.) of all the running containers 
-
+---
 ### docker-compose
 *	**-f _docker-compose-yml-file-path_ up -d**  
 	brings container/s up based on the configuration in the file at path docker-compose-yml-file-path
