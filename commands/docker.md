@@ -1,5 +1,4 @@
 ## Handy commands on _docker-machine_, _docker_ and _docker-compose_ for starters.
----
 ### docker-machine
 *	**ls**  
  		lists available (running & non-running) docker machines (virtual machines created by docker-machine)
