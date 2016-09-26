@@ -32,6 +32,7 @@
 		regenerates certificates  
 		it's required when there is ip mismatch  
 		IP might change at VM startup/restart
+
 ---
 ### docker
 *	**version**  
