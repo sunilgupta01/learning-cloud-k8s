@@ -27,7 +27,7 @@
 *	**get nodes**  
 		Get Nodes
 *	**delete node NODE_NAME**  
-		Delete Node. _stop_ as well is used for it; but _stop_ is depcreaeted now
+		Delete Node. _stop_ as well is used for it; but _stop_ is deprecated.
 *	**get deployments**  
 		Check your deployment (or use get deployment)
 *	**delete deployment DEPLOYMENT_NAME**  
