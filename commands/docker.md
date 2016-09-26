@@ -1,4 +1,4 @@
-#### Basic commands (with options) of _docker-machine_, _docker_ and _docker-compose_, which have been very handy to me.
+## Basic commands (with options) of _docker-machine_, _docker_ and _docker-compose_, which have been very handy to me.
 ---
 ### docker-machine
 *	**ls**  
@@ -77,6 +77,7 @@
 		remove the image with the mentioned imageid
 *	**stats --all**  
 		show the live stream statistics (CPU, memory, IO, network etc.) of all the running containers 
+
 ---
 ### docker-compose
 *	**-f _docker-compose-yml-file-path_ up -d**  
