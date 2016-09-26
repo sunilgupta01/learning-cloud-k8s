@@ -27,7 +27,7 @@
 *	**get nodes**  
 		Get Nodes
 *	**delete node NODE_NAME**  
-		Delete Node
+		Delete Node. _stop_ as well is used for it; but _stop_ is depcreaeted now
 *	**get deployments**  
 		Check your deployment (or use get deployment)
 *	**delete deployment DEPLOYMENT_NAME**  
@@ -38,11 +38,14 @@
 		Check Sevices
 *	**get cs**  
 		Health Check
-*	**run mydeploymentname --image=pvtdockerrepo:5000/imagename --port=proxy_server_port**  
-		creates an instance of imagename image in (a new pod or existing pod if it's second time?)  
-		YML could be provided as well. what's the exact command for this?  
+*	**run _mydeploymentname_ --image=_pvtdockerrepo:5000_/_imagename_ --port=proxy_server_port**  
+		creates deployment and pod with container of _imagename_ image
 *	**expose deployment mydeploymentname --target-port=proxy_server_port --type=NodePort**  
 		Expose the POD port to outside
+*	**create -f _k8sconfigfile_**  
+		use _k8sconfigfile_ to configure deployments/pods etc.  
+*	**create -f _k8sconfigfiledirectory_**  
+		use yaml, yml and json files in _k8sconfigfiledirectory_ to configure deployments/pods etc.  
 *	**describe svc mydeploymentname**  
 		view dertails of the mydeploymentname service.  
 		Note down NodePort to access application using the minikube IP and the node port  
