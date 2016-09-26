@@ -1,5 +1,6 @@
 #### Basic commands (with options) of _minikube_ and _kubectl_, which have been very handy to me.
-### minikube
+---
+### minikube  
 *	**start**  
 		starts a VM  
 *	**start --docker-env HTTPS_PROXY=https://proxy_user_name:proxy_user_pwd@proxy_server_id:proxy_server_port --docker-env HTTP_PROXY=http://proxy_user_name:proxy_user_pwd@proxy_server_id:proxy_server_port --insecure-registry=pvtdockerrepo:5000 --docker-env NO_PROXY=pvtdockerrepo --logtostderr --show-libmachine-logs**  
@@ -23,6 +24,7 @@
 *	**@FOR /f "tokens=*" %i IN ('minikube docker-env') DO @%i**  
 		Set the docker to point to VM created by minikube (in cmd.exe). Don't pre-fix this command with minikube
 
+---
 ### kubectl
 *	**get nodes**  
 		Get Nodes
