@@ -1,5 +1,4 @@
-#### Basic commands (with options) of _minikube_ and _kubectl_, which have been very handy to me.
----
+## Handy commands on _minikube_ and _kubectl_ for starters
 ### minikube  
 *	**start**  
 		starts a VM  
