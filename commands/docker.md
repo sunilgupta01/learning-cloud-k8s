@@ -24,7 +24,8 @@
 *	**env _myvm_ --shell powershell | Invoke-Expression**  
 		connects to myvm machine (env variables need to be set) and make it active machine (on PowerShell)
 *	**start _myvm_**  
-		starts the machine
+		starts the machine  
+		if different IP (from previous run) is assigned on restart, docker-machine shows connectivity issues with the VM. One temporary solution, I found is to restart it in a way so that it gets same IP. E.g. if 192.168.99.102 (third in seq 100, 101, 102) was assigned at creation, then start any two other VMs before this docker machine, so that this one gets 102.
 *	**stop _myvm_**  
 		stops the machine
 *	**regenerate-certs _myvm_**  
