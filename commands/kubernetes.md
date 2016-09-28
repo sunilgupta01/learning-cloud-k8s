@@ -44,9 +44,13 @@
 *	**expose deployment mydeploymentname --target-port=proxy_server_port --type=NodePort**  
 		Expose the POD port to outside
 *	**create -f _k8sconfigfile_**  
-		use _k8sconfigfile_ to configure deployments/pods etc.  
+		creates configuration for pods/deployments/services using _k8sconfigfile_   
 *	**create -f _k8sconfigfiledirectory_**  
-		use yaml, yml and json files in _k8sconfigfiledirectory_ to configure deployments/pods etc.  
+		creates configuration for pods/deployments/services using on yaml/yml/files in _k8sconfigfiledirectory_   
+*	**apply -f _k8sconfigfile_**  
+		creates or updates configuration for pods/deployments/services using _k8sconfigfile_   
+*	**apply -f _k8sconfigfiledirectory_**  
+		creates or updates configuration for pods/deployments/services using on yaml/yml/files in _k8sconfigfiledirectory_   
 *	**describe svc mydeploymentname**  
 		view dertails of the mydeploymentname service.  
 		Note down NodePort to access application using the minikube IP and the node port  
