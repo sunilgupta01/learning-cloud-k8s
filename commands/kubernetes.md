@@ -1,4 +1,6 @@
-## Handy commands on _minikube_ and _kubectl_ for starters
+## Handy commands on _minikube_ and _kubectl_ for starters  
+#### Make sure to open the windows command in administration mode to run minikube commands.  
+#### These commands are specific to Windows cmd
 ### minikube  
 *	**start**  
 		starts a VM  
