@@ -1,7 +1,7 @@
 ## Handy commands on _minikube_ and _kubectl_ for starters  
 #### Make sure to open the windows command in administration mode to run minikube commands.  
 #### These commands are specific to Windows cmd
-#### Docker runs directly once we set docenv; but on VPN, we might have to use minikube ssh docker to run it.
+#### Docker runs directly once we set docenv; but on VPN, we might have to use minikube ssh docker to run it. Another scenario, where docker commands might not run directly is when the dvm version is different. Check the dvm version of the docker (docker ls) and use the right one (e.g. docker use 1.11.1)
 ### minikube  
 *	**start**  
 		starts a VM  
