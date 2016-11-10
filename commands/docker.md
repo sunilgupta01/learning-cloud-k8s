@@ -33,6 +33,9 @@
 		it's required when there is ip mismatch  
 		IP might change at VM startup/restart
 
+*	**Notes:**  
+ 		If docker-machine is started in admin mode, then the user would be able to access the docker-machine from command windows opened in admin mode only. Same goes for non-admin mode as well.
+		
 ---
 ### docker
 *	**version**  
