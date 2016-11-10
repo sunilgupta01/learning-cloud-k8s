@@ -27,7 +27,7 @@
 		starts the machine  
 		if different IP (from previous run) is assigned on restart, docker-machine shows connectivity issues with the VM. One temporary solution, I found is to restart it in a way so that it gets same IP. E.g. if 192.168.99.102 (third in seq 100, 101, 102) was assigned at creation, then start any two other VMs before this docker machine, so that this one gets 102.
 *	**stop _myvm_**  
-		stops the machine
+		stops the machine  
 *	**regenerate-certs _myvm_**  
 		regenerates certificates  
 		it's required when there is ip mismatch  
