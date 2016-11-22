@@ -20,7 +20,9 @@
 *	**rm _myvm_**  
 		removes the virtual machine
 *	**@FOR /f "tokens=*" %i IN ('docker-machine env --shell cmd _myvm_') DO @%i**  
-		connects to myvm machine (env variables need to be set) and makes it active machine (on cmd.exe) for Windows	.  For MacOs you can just use - docker-machine env myvmname
+		connects to myvm machine (env variables need to be set) and makes it active machine (on cmd.exe) - for Windows  
+*	**env _myvm_**  
+		connects to myvm machine (env variables need to be set) and makes it active machine (on cmd.exe) - for Mac OS  
 *	**env _myvm_ --shell powershell | Invoke-Expression**  
 		connects to myvm machine (env variables need to be set) and make it active machine (on PowerShell)
 *	**start _myvm_**  
