@@ -6,5 +6,21 @@
  		connects to currently running PostgreSQL database with default host (localhost) and default port (5432) with user name - _username_  
 
 ### pg_ctl
-*	**none**  
+*	**start**  
                  start PostgreSQL database with default host (localhost) and default port (5432)
+*	**-D DATA_DIRECTORY start**  
+                 start PostgreSQL database with default host (localhost) and default port (5432); the data would be saved in DATA_DIRECTORY
+
+### PostgreSQL Shell Commands
+*	**\q**  
+                 Exit the PostgreSQL
+*	**create database dbname**  
+                 creates a database with dbname as the database name
+*	**\l**  or **\list**  
+                 List the databases
+*	**\c**  or **\connect**  dbname  
+                 connect to database with name - dbname
+*	**\dt**  
+                 List the tables in current database
+*	**\d table_name**  
+                 Describes table with name table_name
