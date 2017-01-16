@@ -12,13 +12,13 @@
                  start PostgreSQL database with default host (localhost) and default port (5432); the data would be saved in DATA_DIRECTORY
 
 ### PostgreSQL Shell Commands
+*	**create database dbname;**  
+                 creates a database with dbname as the database name
 *	**\q**  
                  Exit the PostgreSQL
-*	**create database dbname**  
-                 creates a database with dbname as the database name
-*	**\l**  or **\list**  
+*	**\l  or \list**  
                  List the databases
-*	**\c**  or **\connect**  dbname  
+*	**\c  or \connect**  dbname  
                  connect to database with name - dbname
 *	**\dt**  
                  List the tables in current database
