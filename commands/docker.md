@@ -82,7 +82,9 @@
 		remove the image with the mentioned imageid
 *	**stats --all**  
 		show the live stream statistics (CPU, memory, IO, network etc.) of all the running containers 
-
+*	**rmi $(docker images -f "dangling=true" -q)**  
+		remove unnecessary dangling images freeing up the disk space 
+		
 ---
 ### docker-compose
 *	**-f _docker-compose-yml-file-path_ up -d**  
