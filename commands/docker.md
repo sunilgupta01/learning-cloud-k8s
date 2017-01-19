@@ -82,8 +82,11 @@
 		remove the image with the mentioned imageid
 *	**stats --all**  
 		show the live stream statistics (CPU, memory, IO, network etc.) of all the running containers 
+*	**ps --filter "status=exited" | grep 'ago' | awk '{print $1}' | xargs --no-run-if-empty docker rm**  
+		remove stopped containers freeing up the disk space 
 *	**rmi $(docker images -f "dangling=true" -q)**  
-		remove unnecessary dangling images freeing up the disk space 
+		remove unnecessary dangling images freeing up the disk space; preferrably, remove stopped containers before removing dangling images 
+		
 		
 ---
 ### docker-compose
