@@ -9,6 +9,10 @@
 		downloads a lightweight Linux distribution (boot2docker) with the Docker daemon installed  
 		creates a machines with the name myvm using virtualbox as a driver  
 		configures insecure connection to pvtdockerrepo docker registry  
+* 	**--storage-path _my-location_ create -d virtualbox _myvm_**  
+		downloads a lightweight Linux distribution (boot2docker) with the Docker daemon installed  at a specific location  
+*	**--storage-path _my-location_ --virtualbox-disk-size _new-disk-size_ --virtualbox-memory _new-memory-size_ create _myvm_**  
+		change the default location, memory size and disk-size for new vms  
 *	**ip _myvm_**  
 		gets the ip of the virtual machine
 *	**active**  
