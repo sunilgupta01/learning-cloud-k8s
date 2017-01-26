@@ -1,7 +1,13 @@
 
-Basic Expressions
+Java SE 8 added two packages for bulk data processing
+  java.util.stream (a stream is like an iterator, but with a lot of extra functionality)
+  java.util.function
 
-(parameters) ->expression                or         (parameters) ->{ statements; }
+Basic Syntax of Lambda Expressions
+  (parameters) ->expression
+  or
+  (parameters) ->{ statements; }
+  
 Examples
 1.  () -> 5                           		// takes no value and returns 5
 2.  x -> 2 * x            					// takes a number and returns the result of doubling it
@@ -10,3 +16,17 @@ Examples
 5.  (String s) -> System.out.print(s) 		// takes a string and prints it to console without returning anything
 
 Use Cases
+  looping using forEach() - Stream package
+
+What is double colon operator in java 8?
+whic all classes support doublecolon
+Which all elements could be streamed
+List all the available APIs on stream()
+Consumer class - this class is kind of object of a function
+can filters work on previous element
+Predicate
+limit
+supplier?
+what are parallel streams
+References:
+http://www.developer.com/java/start-using-java-lambda-expressions.html
