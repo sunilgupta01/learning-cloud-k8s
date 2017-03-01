@@ -66,6 +66,8 @@
 		, where Dockerfile is present. Otherwise, build tries to compress complete parent folder.  
 *	**build -t _pvtdockerrepo:5000_/_imagename:latest_**  
 		creates an image with name imagename (and tags it with repo name) using docker file in the current folder
+*	**save _imagename:latest_ > _targetdir/target_tar_name.tar_**  
+		creates a TAR of an image
 *	**docker tag _imagename:latest_ _pvtdockerrepo:5000_/_imagename:latest_**  
 		tag image
 *	**docker push _pvtdockerrepo:5000_/_imagename:latest_**  
