@@ -1,16 +1,16 @@
 # Azure AKS Deployment Commands for Windows 10
 
-## Setup
+### Setup
 Install Azure CLI
 
-## Steps before performing any action on Azure portal through CLI
+### Steps before performing any action on Azure portal through CLI
 Login to Azure
 ```
 az login
 ```
 _Note: [Set Proxy](#setting-proxy) before running any cli command if inside enterprise network_ 
 
-## Setting Proxy
+### Setting Proxy
 ```
 @ECHO OFF
 set http_proxy=http://<username>:<password>@<proxy_ip>:<proxy_port>
