@@ -1,5 +1,5 @@
 # Azure AKS Deployment Commands for Windows 10
-
+_Note: All resources created will be prefixed by **example** or **example_**
 ### Setup
 Install Azure CLI
 
@@ -9,6 +9,19 @@ Login to Azure
 az login
 ```
 _Note: [Set Proxy](#setting-proxy) before running any cli command if inside enterprise network_ 
+
+### Create a Resource Group
+```
+az group create --name example_rg --location centralus
+```
+_Note: Use a region that supports AKS so that all the resources can be created in same region_
+
+### Create Azure Container Registry and Service Principal to access ACR
+```
+az acr create --resource-group rg --name exampleacr --sku Standard
+az ad sp create-for-rbac --scopes /subscriptions/<subscription_id>/resourceGroups/example_rg/providers/Microsoft.ContainerRegistry/registries/exampleacr --role Owner --password example_acr_sp_pwd
+az acr list --resource-group example_rg --query "[].{acrLoginServer:loginServer}" --output table
+```
 
 ### Setting Proxy
 ```
