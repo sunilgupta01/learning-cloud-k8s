@@ -45,9 +45,9 @@ kubectl get nodes
 ```
 kubectl proxy
   It will run k8s dashboard on local with port 8001. Use below URL to access it.
-		http://localhost:8001/api/v1/proxy/namespaces/kube-system/services/kubernetes-dashboard
+  http://localhost:8001/api/v1/proxy/namespaces/kube-system/services/kubernetes-dashboard
 az aks browse --resource-group example_rg --name example_aks
-	It will run k8s dashboard on local with port 8001 and also open the dashboard in browser
+  It will run k8s dashboard on local with port 8001 and also open the dashboard in browser
 ```
 ### Setting Proxy
 ```
