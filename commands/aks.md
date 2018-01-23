@@ -30,7 +30,25 @@ docker login exampleacr.azurecr.io -u 41b1ce21-f813-4203-n3f5-a7n1099ca1fz -p ex
 docker tag example_dockerimage exampleacr.azurecr.io/example_dockerimage
 docker push exampleacr.azurecr.io/example_dockerimage
 ```
-
+### Enable AKS preview and Create Azure k8s Cluster
+```
+az provider register -n Microsoft.ContainerService
+az aks create --resource-group example_rg --name example_aks --node-count 1 --generate-ssh-keys
+```
+### Install kubectl, get aks credentials and verify aks connection
+```
+	az aks install-cli
+  az aks get-credentials --resource-group example_rg --name example_aks
+	kubectl get nodes
+```
+### Deploy and View k8s dashboard in local
+```
+kubectl proxy
+  It will run k8s dashboard on local with port 8001. Use below URL to access it.
+		http://localhost:8001/api/v1/proxy/namespaces/kube-system/services/kubernetes-dashboard
+az aks browse --resource-group example_rg --name example_aks
+	It will run k8s dashboard on local with port 8001 and also open the dashboard in browser
+```
 ### Setting Proxy
 ```
 @ECHO OFF
