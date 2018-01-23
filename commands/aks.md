@@ -37,9 +37,9 @@ az aks create --resource-group example_rg --name example_aks --node-count 1 --ge
 ```
 ### Install kubectl, get aks credentials and verify aks connection
 ```
-	az aks install-cli
-  az aks get-credentials --resource-group example_rg --name example_aks
-	kubectl get nodes
+az aks install-cli
+az aks get-credentials --resource-group example_rg --name example_aks
+kubectl get nodes
 ```
 ### Deploy and View k8s dashboard in local
 ```
