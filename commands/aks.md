@@ -20,14 +20,17 @@ _Note: Use a region that supports AKS so that all the resources can be created i
 ```
 az acr create --resource-group rg --name exampleacr --sku Standard
 az ad sp create-for-rbac --scopes /subscriptions/<subscription_id>/resourceGroups/example_rg/providers/Microsoft.ContainerRegistry/registries/exampleacr --role Owner --password example_acr_sp_pwd
-  Sample Output: Azure AD Service Principal: 
-  {"appId": "41b1ce21-f813-4203-n3f5-a7n1099ca1fz",
-	"displayName": "azure-cli-2018-01-20-17-04-29",
-	"name": "http://azure-cli-2018-01-20-17-04-29",,
-	"password": "example_acr_sp_pwd",
-	"tenant": "3eab25b7-0ae5-47df-a3db-d9c0c81e90b1" }
+  Sample Output:
+  {
+    "appId": "41b1ce21-f813-4203-n3f5-a7n1099ca1fz",
+    "displayName": "azure-cli-2018-01-20-17-04-29",
+    "name": "http://azure-cli-2018-01-20-17-04-29",,
+    "password": "example_acr_sp_pwd",
+    "tenant": "3eab25b7-0ae5-47df-a3db-d9c0c81e90b1"
+  }
 az acr list --resource-group example_rg --query "[].{acrLoginServer:loginServer}" --output table
-  Sample Output: exampleacr.azurecr.io
+  Sample Output:
+  exampleacr.azurecr.io
 ```
 ### Login to Azure Container Registry, tag and push docker image to ACR
 ```
