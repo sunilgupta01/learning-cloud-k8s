@@ -57,6 +57,34 @@ kubectl proxy
 az aks browse --resource-group example_rg --name example_aks
   It will run k8s dashboard on local with port 8001 and also open the dashboard in browser
 ```
+### Deploy a docker image on aks
+```
+kubectl create secret docker-registry exampleacr_secret --docker-server exampleacr.azurecr.io  --docker-email=userid@domain.com  --docker-username=41b1ce21-f813-4203-n3f5-a7n1099ca1fz --docker-password example_acr_sp_pwd
+  It will create a secret for Azure Container Registry. This needs to be mentioned in aks manifest file: imagePullSecrets:
+      - name: exampleacr_secret
+kubectl create -f example_app.yml
+  It will deploy component based on the manifest file - example_app.yml
+kubectl get service example_app_service_name --watch
+  It will give details of the services, including external IP (if configured)
+
+```
+### Create public static IP with DNS name and assigning it to a service
+```
+az network public-ip create -g MC_example_rg_digexp-example_aks -n example_app_servic_publicip --dns-name example_app --allocation-method Static
+  It will result a JSON, which will also have the public IP mentioned. This public IP can be used in service spec in k8s manifest file (spec: type: LoadBalancer | spec: loadBalancerIP: 52.176.148.105) to point application service to a static IP. 
+```
+### Create storage account and file share to be shared by example application
+```
+az storage account create -n examplestorage -g example_rg -l centralus --sku Standard_LRS
+  Creates storage account
+az storage account show-connection-string -n examplestorage -g example_rg -o tsv
+  Gets storage account connection string
+az storage share create -n examplestorage_fileshare --connection-string DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=examplestorage;AccountKey=A4wajUuLKO8Gzkk82h2cXY3Z2aEHhcK74joZ972wvfwVMnzNUmdO1/ALVhJ7+HuQe+dFXzmypOj5auxhjDwjJA==
+  Creates file share
+az storage share exists -n examplestorage_fileshare --connection-string DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=examplestorage;AccountKey=A4wajUuLKO8Gzkk82h2cXY3Z2aEHhcK74joZ972wvfwVMnzNUmdO1/ALVhJ7+HuQe+dFXzmypOj5auxhjDwjJA==
+  Checks details of shared storage
+```
+
 ### Setting Proxy
 ```
 @ECHO OFF
