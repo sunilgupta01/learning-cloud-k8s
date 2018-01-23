@@ -1,5 +1,5 @@
 # Typical Steps to deploy code on Azure AKS using Azure CLI
-_Note: All resources created will be prefixed by **example** or **example_**
+_Note: All resources created will be prefixed by **example**
 ### Setup
 [Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 
