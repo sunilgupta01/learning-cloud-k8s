@@ -10,9 +10,10 @@ az login
 ```
 _Note: [Set Proxy](#setting-proxy) before running any cli command if inside enterprise network_ 
 
-### Create a Resource Group
+### Create/Delete a Resource Group
 ```
 az group create --name example_rg --location centralus
+az group delete -n example_rg
 ```
 _Note: Use a region that supports AKS so that all the resources can be created in same region_
 
