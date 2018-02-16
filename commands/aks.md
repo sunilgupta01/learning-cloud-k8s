@@ -34,13 +34,6 @@ az acr list --resource-group example_rg --query "[].{acrLoginServer:loginServer}
   Sample Output:
   exampleacr.azurecr.io
 ```
-## Subsequent Login
-### Login to Azure Container Registry, tag and push docker image to ACR
-```
-docker login exampleacr.azurecr.io -u 41b1ce21-f813-4203-n3f5-a7n1099ca1fz -p example_acr_sp_pwd
-docker tag example_dockerimage exampleacr.azurecr.io/example_dockerimage
-docker push exampleacr.azurecr.io/example_dockerimage
-```
 ### Enable AKS preview and Create Azure k8s Cluster
 ```
 az provider register -n Microsoft.ContainerService
@@ -51,6 +44,13 @@ az aks create --resource-group example_rg --name example_aks --node-count 1 --ge
 az aks install-cli
 az aks get-credentials --resource-group example_rg --name example_aks
 kubectl get nodes
+```
+## Subsequent Login
+### Login to Azure Container Registry, tag and push docker image to ACR
+```
+docker login exampleacr.azurecr.io -u 41b1ce21-f813-4203-n3f5-a7n1099ca1fz -p example_acr_sp_pwd
+docker tag example_dockerimage exampleacr.azurecr.io/example_dockerimage
+docker push exampleacr.azurecr.io/example_dockerimage
 ```
 ### Deploy and View k8s dashboard in local
 ```
