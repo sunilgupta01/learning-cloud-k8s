@@ -1,5 +1,6 @@
 # Typical Steps to deploy code on Azure AKS using Azure CLI
 _Note: Tested with Azure CLI version **2.0.25** on **Windows 10 64 bit** on **Command Prompt**. All resources created are prefixed by **example**._
+## First Time Setup
 ### Setup
 [Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 
@@ -33,6 +34,7 @@ az acr list --resource-group example_rg --query "[].{acrLoginServer:loginServer}
   Sample Output:
   exampleacr.azurecr.io
 ```
+## Subsequent Login
 ### Login to Azure Container Registry, tag and push docker image to ACR
 ```
 docker login exampleacr.azurecr.io -u 41b1ce21-f813-4203-n3f5-a7n1099ca1fz -p example_acr_sp_pwd
@@ -58,16 +60,11 @@ kubectl proxy
 az aks browse --resource-group example_rg --name example_aks
   It will run k8s dashboard on local with port 8001 and also open the dashboard in browser
 ```
-### Deploy a docker image on aks
+### Create secret to access docker registry by cluster
 ```
 kubectl create secret docker-registry exampleacr_secret --docker-server exampleacr.azurecr.io  --docker-email=userid@domain.com  --docker-username=41b1ce21-f813-4203-n3f5-a7n1099ca1fz --docker-password example_acr_sp_pwd
   It will create a secret for Azure Container Registry. This needs to be mentioned in aks manifest file: imagePullSecrets:
       - name: exampleacr_secret
-kubectl create -f example_app.yml
-  It will deploy component based on the manifest file - example_app.yml
-kubectl get service example_app_service_name --watch
-  It will give details of the services, including external IP (if configured)
-
 ```
 ### Create public static IP with DNS name and assigning it to a service
 ```
@@ -84,6 +81,18 @@ az storage share create -n examplestorage_fileshare --connection-string DefaultE
   Creates file share
 az storage share exists -n examplestorage_fileshare --connection-string DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=examplestorage;AccountKey=A4wajUuLKO8Gzkk82h2cXY3Z2aEHhcK74joZ972wvfwVMnzNUmdO1/ALVhJ7+HuQe+dFXzmypOj5auxhjDwjJA==
   Checks details of shared storage
+```
+## Interative steps
+### Deploy a docker image on aks
+```
+kubectl create secret docker-registry exampleacr_secret --docker-server exampleacr.azurecr.io  --docker-email=userid@domain.com  --docker-username=41b1ce21-f813-4203-n3f5-a7n1099ca1fz --docker-password example_acr_sp_pwd
+  It will create a secret for Azure Container Registry. This needs to be mentioned in aks manifest file: imagePullSecrets:
+      - name: exampleacr_secret
+kubectl create -f example_app.yml
+  It will deploy component based on the manifest file - example_app.yml
+kubectl get service example_app_service_name --watch
+  It will give details of the services, including external IP (if configured)
+
 ```
 
 ### Setting Proxy
