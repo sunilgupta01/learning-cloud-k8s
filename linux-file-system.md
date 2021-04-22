@@ -73,8 +73,9 @@ Linux is a complex system which requires a more complex and efficient way to sta
 -	/var/log/messages : log of messages produced by syslog daemon at boot.
 -	/var/log/wtmp : list login time and duration of each user on the system currently.
 
-Additional Link with good details
-https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html
+### References
+- Copied content from [Linux Directory Structure and Important Files Paths Explained](https://www.tecmint.com/linux-directory-structure-and-important-files-paths-explained/) for quick self reference
+- Another informative link [Linux Filesystem Hierarchy](https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html)
 
-Copied from https://www.tecmint.com/linux-directory-structure-and-important-files-paths-explained/ for self-reference
+
 
