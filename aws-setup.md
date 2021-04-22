@@ -11,11 +11,14 @@
 *All commands mentioned in the guide are tried on ubuntu shell*
 
 ### 1. Setup AWS Account
-1. `Create an AWS account` using an existing email ID.
+1. Create an AWS account
+   - User needs an existing email ID
    - Debit or credit card details will be needed to setup an account
 
 ### 2. Create an IAM user
-2. `Add an user` for all the setup because root user should not be used for security purposes.
+2. Add an user
+   - It is used by AWS CLI
+   - It is created because root user should not be used for security purposes.
    - AWS Console > IAM > Users > Add user
      - Provide a `name`
      - Check `Programmatic access`
@@ -24,7 +27,7 @@
      - On user creation, `Access key id` and `secret access key` are created. Save these locally for reference
 
 ### 3. Setup AWS CLI
-1. `Install AWS CLI` on local
+1. Install AWS CLI on local
    - execute following command
    ```bash 
    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -32,7 +35,7 @@
    sudo ./aws/install
    ```
 
-2. `Configure AWS CLI`
+2. Configure AWS CLI
    - execute following command
    ```bash
    aws configure
@@ -46,7 +49,7 @@
    ```
 
 ### 4. Setup EC2 Instance
-1. `Create key pair`
+1. Create key pair
    - I created a key pair locally so that AWS does not know my private key
    - Alternatively, one can create it on AWS console under EC2.
    - This key pair is used to login to EC2 instances on AWS.
@@ -62,7 +65,7 @@
    The key fingerprint is: SHA256:abcd usrname@pcname
    ```
 
-2. `Import public key` in AWS
+2. Import public key in AWS
    - execute following command
    ```bash
    aws ec2 import-key-pair --key-name "ec2-key" --public-key-material fileb://~/.ssh/id_rsa.pub
@@ -71,7 +74,7 @@
    - *`~` points to `/home/username`*
    - *with `WSL` it was accessible on `\\wsl$\Ubuntu\home\username\.ssh\id_rsa.pub` from windows explorer*
 
-3. `Create EC2 instance`
+3. Create EC2 instance
    - In this example, I am using ubuntu server 20.x version in India with t2.micro with 8 GB storage
    - For k8s learning, I created ubuntu server 20.x version in India with t3a.large (with 32GB Storage), because 8GB default storage was not sufficient for working with minikube
    - Validate AMI IDs before using; these change based on OS and regions etc.
@@ -85,24 +88,24 @@
    ```
    - It creates a machine with an instance Id
 
-4. `Update EC2 instance security group settings` [pending - AWS CLI approach]
+4. Update EC2 instance security group settings [*pending - AWS CLI approach*]
    - `AWS Console > EC2 > Instance id > Security Group > Inbound rules`
    - Select `all traffic`
    - Add `my ip` from drop-down
 
-5. `Connect to AWS EC2 instance`
+5. Connect to AWS EC2 instance
    - execute following command
    ```bash
    ssh -i <private key file path> ubuntu@<public ip address>
    ```
 
 ### 5. Assign Static IP to EC2 instance (Optional)
-*There is an additonal cost associated with elastic IP*
-
-*[Amazon EC2 On-Demand Pricing
+*There is an additonal cost associated with elastic IP [EC2 On-Demand Pricing
 ](https://aws.amazon.com/ec2/pricing/on-demand/)*
 
-1. `Allocate elastic IP` address so that with each restart new IP is not assigned
+1. Allocate elastic IP
+   - A new public IP address is assigned to EC2 instance on restart
+   - This can help if one needs to access the machine with same IP
    - execute following command (it provides a static IP)
    ```bash
    aws ec2 allocate-address --domain vpc --network-border-group ap-south-1
@@ -110,7 +113,7 @@
    - Alternatively, `AWS Console > EC2 > Network and Security > Elastic IPs > Allocate Elastic IP address > Allocate`
    - *this IP address will add to bill even when EC2 instance is down. Need to see about it*
 
-2. `Associate static/elastic IP address` to the EC2 instance/VM
+2. Associate IP address with EC2 instance
    - execute following command
    ```bash
    aws ec2 associate-address --instance-id <ec2-istanceid> --public-ip <elastic ip address>
