@@ -10,9 +10,11 @@
 ## Setup steps
 *All commands mentioned in the guide are tried on ubuntu shell*
 
-### Create an IAM user
+### 1. Setup AWS Account
 1. `Create an AWS account` using an existing email ID.
    - Debit or credit card details will be needed to setup an account
+
+### 2. Create an IAM user
 2. `Add an user` for all the setup because root user should not be used for security purposes.
    - AWS Console > IAM > Users > Add user
      - Provide a `name`
@@ -21,13 +23,14 @@
      - Attach existing policy with `AdministratorAccess` (for starters; in longer run, provide only required access)
      - On user creation, `Access key id` and `secret access key` are created. Save these locally for reference
 
-### Setup AWS CLI
+### 3. Setup AWS CLI
 1. `Install AWS CLI` on local
 ```bash 
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
 ```
+
 2. `Configure AWS CLI`
    - execute following command
    ```bash
@@ -40,7 +43,7 @@ sudo ./aws/install
    Default region name [None]: 
    Default output format [None]:
    ```
-### Setup EC2 Instance
+### 4. Setup EC2 Instance
 1. `Create key pair`
    - I created a key pair locally so that AWS does not know my private key
    - Alternatively, one can create it on AWS console under EC2.
@@ -93,7 +96,7 @@ sudo ./aws/install
    ssh -i <private key file path> ubuntu@<public ip address>
    ```
 
-### Assign Static IP to EC2 instance (Optional)
+### 5. Assign Static IP to EC2 instance (Optional)
 *There is an additonal cost associated with elastic IP*
 
 *[Amazon EC2 On-Demand Pricing
@@ -114,7 +117,7 @@ sudo ./aws/install
    ```
    *Post this association, one can access the EC2 instance using this IP address*
 
-### Maintain EC2 Instance
+### 6. Maintain EC2 Instance
 1. Check status of an EC2 instance
 ```bash
 aws ec2 describe-instance-status --instance-ids my-instance-id
@@ -125,7 +128,7 @@ aws ec2 describe-instance-status --instance-ids my-instance-id
 aws ec2 start-instances --instance-ids my-instance-id
 ```
 
-3. Start an EC2 instance
+3. Stop an EC2 instance
 ```bash
 aws ec2 stop-instances --instance-ids my-instance-id
 ```
