@@ -93,13 +93,30 @@
    - Select `all traffic`
    - Add `my ip` from drop-down
 
-5. Connect to AWS EC2 instance
+#### 5. Login to EC2 instance
+1. Connect to AWS EC2 instance
    - execute following command
    ```bash
    ssh -i <private key file path> ubuntu@<public ip address>
    ```
 
-#### 5. Assign Static IP to EC2 instance (Optional)
+#### 6. Maintain EC2 Instance
+1. Check status of an EC2 instance
+```bash
+aws ec2 describe-instance-status --instance-ids my-instance-id
+```
+
+2. Start an EC2 instance
+```bash
+aws ec2 start-instances --instance-ids my-instance-id
+```
+
+3. Stop an EC2 instance
+```bash
+aws ec2 stop-instances --instance-ids my-instance-id
+```
+
+#### 7. Assign Static IP to EC2 instance (Optional)
 *There is an additonal cost associated with elastic IP [EC2 On-Demand Pricing
 ](https://aws.amazon.com/ec2/pricing/on-demand/)*
 
@@ -118,22 +135,6 @@
    aws ec2 associate-address --instance-id <ec2-istanceid> --public-ip <elastic ip address>
    ```
    - Post this association, one can access the EC2 instance using this IP address
-
-#### 6. Maintain EC2 Instance
-1. Check status of an EC2 instance
-```bash
-aws ec2 describe-instance-status --instance-ids my-instance-id
-```
-
-2. Start an EC2 instance
-```bash
-aws ec2 start-instances --instance-ids my-instance-id
-```
-
-3. Stop an EC2 instance
-```bash
-aws ec2 stop-instances --instance-ids my-instance-id
-```
 
 #### Notes
 - For each account created on AWS, a `VPC` is created
