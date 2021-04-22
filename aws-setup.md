@@ -80,7 +80,9 @@ sudo ./aws/install
    ssh -i <private key file path> ubuntu@<public ip address>
    ```
 
-### Optional Steps
+### Optional Steps (Elsatic IP)
+*There is an additonal cost associated with elastic IP [Amazon EC2 On-Demand Pricing
+](https://aws.amazon.com/ec2/pricing/on-demand/)*
 1. `Allocate elastic IP` address so that with each restart new IP is not assigned
    - Execute following command (it provides a static IP)
    ```bash
