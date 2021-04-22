@@ -8,4 +8,5 @@ Please feel free to participate, provide inputs and feedback.
 - [Linux file structure - basic info](linux-file-system)
 - [AWS EC2 Setup](aws-setup)
 - [minikube Setup](minikube-setup)
+- [kubectl Setup](kubectl-setup)
 
