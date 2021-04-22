@@ -147,5 +147,3 @@ aws ec2 stop-instances --instance-ids my-instance-id
 
 ### References
 Inspired by a k8s introductory session by [Vijay Dharap](https://github.com/dharapvj). Some steps and commands are added based on my personal experiment.
-
-[@Sunil Gupta](https://github.com/sunilgupta01)
