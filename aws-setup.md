@@ -1,12 +1,13 @@
-# Guide to create and access an AWS EC2 instance
-### Local Machine Environment
+[Go to homepage](/)
+# Create and access an AWS EC2 instance
+### Local machine environment
 *Local environment might matter for some shell commands*
    - Windows 10 Pro
    - OS Build 19042.928
    - Software installed: WSL 2
    - Software installed: Ubuntu 20.x
 
-### Setup Steps
+### Setup steps
 *All commands mentioned in the guide are tried on ubuntu shell*
 1. `Create an AWS account` using an existing email ID.
    - Debit or credit card details will be needed to setup an account
@@ -88,6 +89,7 @@ sudo ./aws/install
    ```bash
    ssh -i <private key file path> ubuntu@<elastic ip address>
    ```
+
 ### Maintenance Steps
 1. Check status of an EC2 instance
 ```bash
