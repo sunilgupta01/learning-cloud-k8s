@@ -118,3 +118,8 @@ aws ec2 stop-instances --instance-ids my-instance-id
 ### Yet to try
 - Configure `AWS profile` (on local machine) to access different accounts?
 - Check approach to `set security settings of EC2 instance through AWS CLI`
+
+### References
+Inspired by a k8s introductory session by [Vijay Dharap](https://github.com/dharapvj). Some steps and commands are added based on my personal experiment.
+
+[@Sunil Gupta](https://github.com/sunilgupta01)
