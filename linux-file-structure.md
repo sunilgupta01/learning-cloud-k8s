@@ -1,4 +1,4 @@
-# LINUX folder structure
+# LINUX file structure
 ## Each of the  directory (which is a file, at the first place) contains important information, required for booting to device drivers, configuration files, etc.
 ### Describing briefly the purpose of each directory, we are starting hierarchically.
 - /bin : All the executable binary programs (file) required during booting, repairing, files required to run into single-user-mode, and other important, basic commands viz., cat, du, df, tar, rpm, wc, history, etc.
