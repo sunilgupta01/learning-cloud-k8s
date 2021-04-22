@@ -4,9 +4,12 @@ This site is created for self reference while I have been learning cloud and kub
 
 Please feel free to participate, provide inputs and feedback.
 
-# Table of Contents
-- [Linux file structure - basic info](linux-file-system)
+# Steps to setup minikube on an AWS EC2 instance
 - [AWS EC2 Setup](aws-setup)
 - [Docker Setup](docker-setup)
 - [Minikube Setup](minikube-setup)
 - [Kubectl Setup](kubectl-setup)
+
+# For quick reference
+- [Linux file structure - basic info](linux-file-system)
+
