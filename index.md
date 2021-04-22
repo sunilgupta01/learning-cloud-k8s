@@ -5,5 +5,6 @@ This site is created for self reference while I have been learning cloud and kub
 Please feel free to participate, provide inputs and feedback.
 
 # Table of Contents
-- [Linxu file system](linux-file-system)
+- [Linux file system](linux-file-system)
+- [AWS EC2 Setup, primarily using AWS CLI](aws-setup)
 
