@@ -52,7 +52,6 @@
 #### 4. Setup EC2 Instance
 1. Create key pair
    - I created a key pair locally so that AWS does not know my private key
-   - Alternatively, one can create it on AWS console under EC2.
    - This key pair is used to login to EC2 instances on AWS.
    - Using this approach user name and password are not asked.
    - execute following command (I did not provide any paraphrase.)
