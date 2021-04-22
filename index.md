@@ -1,10 +1,10 @@
 ## Welcome to learning Cloud & k8s
 
-This site is created for self reference while I have been learning cloud and kubernetes.
+This site is created for self reference while I have been learning cloud and kubernetes. A lot of information is copied from various public websites and blogs in a structured way that I followed to do the setup.
 
-Please feel free to participate, provide inputs and feedback.
+Please feel free to provide inputs and feedback.
 
-# Steps to setup minikube on an AWS EC2 instance
+# Setup minikube on AWS EC2 Ubuntu instance
 - [AWS EC2 Setup](aws-setup)
 - [Docker Setup](docker-setup)
 - [Minikube Setup](minikube-setup)
