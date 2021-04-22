@@ -51,23 +51,31 @@ sudo ./aws/install
    Your public key has been saved in /home/username/.ssh/id_rsa.pub
    The key fingerprint is: SHA256:abcd usrname@pcname
    ```
-6. `Import public key` generated in previous step on AWS
+6. `Import public key` generated in previous step on AWS using AWS CLI
+   Execute following command
+   ```bash
+   aws ec2 import-key-pair --key-name "ec2-key" --public-key-material fileb://~/.ssh/id_rsa.pub
+   ```
+   *`~/.ssh/id_rsa.pub` is location of my public key that I created in last step*
+
+   *`~` points to `/home/username`*
+7. `Import public key` generated in previous step on AWS using AWS Console (skip it if key is already imported using previous step)
    - `AWS Console > Services > EC2 > Key Pairs > Actions > Import key pair`
-   - Give a name to this key pair (say - awsec2key) that  will be used while calling AWS CLI for EC2 creation
+   - Give a name to this key pair (e.g. `ec2-key`) that  will be used while calling AWS CLI for EC2 creation
    - Select public key file from local machine. It was under ubuntu WSL in my case.
    ```bash
    \\wsl$\Ubuntu\home\username\.ssh\id_rsa.pub
    ```
 7. `Create EC2 instance` using AWS CLI
-   - I created ubuntu server 20.x version in India with t3a.large (8GB RAM)
-   - AMI IDs are different for same size but different regions.
-   - Also provide volume size. For this AMI, default was 8 GB, which was not sufficient for working with minikube
+   - In this example, I am using ubuntu server 20.x version in India with t2.micro with 8 GB storage
+   - For k8s learning, I created ubuntu server 20.x version in India with t3a.large (with 32GB Storage), because 8GB default storage was not sufficient for working with minikube
+   - Validate AMI IDs before using; these change based on OS and regions etc.
    ```bash
    aws ec2 run-instances \
       --image-id ami-0d758c1134823146a \
-      --instance-type t3a.large \
-      --key-name awsec2key --region ap-south-1 \
-      --block-device-mappings Ebs={VolumeSize=32},DeviceName=/dev/sda1
+      --instance-type t2.micro \
+      --key-name ec2-key --region ap-south-1 \
+      --block-device-mappings Ebs={VolumeSize=8},DeviceName=/dev/sda1
    ```
 	- It creates a machine with an instance Id
 8. `Update EC2 instance security group settings` [pending - check AWS command to do so]
@@ -75,7 +83,7 @@ sudo ./aws/install
      - Select `all traffic`
      - Add `my ip` from drop-down
 9. `Connect to AWS EC2 instance`
-    - Execute following command  
+    - Execute following command
    ```bash
    ssh -i <private key file path> ubuntu@<public ip address>
    ```
