@@ -90,7 +90,7 @@
    - It creates a machine with an instance Id
 
 4. Update EC2 instance security group settings [*pending - AWS CLI approach*]
-   - `AWS Console > EC2 > Instance id > Security Group > Inbound rules`
+   - AWS Console > EC2 > Instance id > Security Group > Inbound rules
    - Select `all traffic`
    - Add `my ip` from drop-down
 
@@ -111,15 +111,14 @@
    ```bash
    aws ec2 allocate-address --domain vpc --network-border-group ap-south-1
    ```
-   - Alternatively, `AWS Console > EC2 > Network and Security > Elastic IPs > Allocate Elastic IP address > Allocate`
-   - *this IP address will add to bill even when EC2 instance is down. Need to see about it*
+   - This IP address will add to bill even when EC2 instance is down
 
 2. Associate IP address with EC2 instance
    - execute following command
    ```bash
    aws ec2 associate-address --instance-id <ec2-istanceid> --public-ip <elastic ip address>
    ```
-   *Post this association, one can access the EC2 instance using this IP address*
+   - Post this association, one can access the EC2 instance using this IP address
 
 #### 6. Maintain EC2 Instance
 1. Check status of an EC2 instance
