@@ -67,11 +67,9 @@
    ```bash
    aws ec2 import-key-pair --key-name "ec2-key" --public-key-material fileb://~/.ssh/id_rsa.pub
    ```
-   *`~/.ssh/id_rsa.pub` is location of my public key that I created in last step*
-
-   *`~` points to `/home/username`*
-   
-   *with `WSL` it was accessible on \\wsl$\Ubuntu\home\username\.ssh\id_rsa.pub from windows explorer*
+   - *`~/.ssh/id_rsa.pub` is location of my public key that I created in last step*
+   - *`~` points to `/home/username`*
+   - *with `WSL` it was accessible on `\\wsl$\Ubuntu\home\username\.ssh\id_rsa.pub` from windows explorer*
 
 3. `Create EC2 instance`
    - In this example, I am using ubuntu server 20.x version in India with t2.micro with 8 GB storage
