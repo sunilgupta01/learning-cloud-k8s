@@ -1,5 +1,5 @@
 [Go to home](/learning-cloud-k8s)
-# Create and access an AWS EC2 instance
+# Setup an AWS EC2 instance
 ### Local machine environment
 *Local environment might matter for some shell commands*
    - Windows 10 Pro
