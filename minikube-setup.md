@@ -1,9 +1,17 @@
 [Go to home](/learning-cloud-k8s)
 ## Setup minikube on Ubuntu
+### Prerequisites
+- 2 CPUs or more
+- 2GB of free memory
+- 20GB of free disk space
+- Internet connection
+- Container or virtual machine manager, such as: `Docker, Hyperkit, Hyper-V, KVM, Parallels, Podman, VirtualBox, or VMWare`
+
 ### Machine environment
 *Local environment might matter for some shell commands*
-   - AWS EC2 instance
-   - OS Ubuntu 20.x
+- AWS EC2 instance
+- OS Ubuntu 20.x
+- Container - docker
 
 ### Setup steps
 *All commands mentioned in the guide are executed inside post doing SSH into AWS EC2 ubuntu instance*
