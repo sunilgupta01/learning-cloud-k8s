@@ -25,11 +25,12 @@
 
 ### 3. Setup AWS CLI
 1. `Install AWS CLI` on local
-```bash 
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
-```
+   - execute following command
+   ```bash 
+   curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+   unzip awscliv2.zip
+   sudo ./aws/install
+   ```
 
 2. `Configure AWS CLI`
    - execute following command
@@ -43,13 +44,14 @@ sudo ./aws/install
    Default region name [None]: 
    Default output format [None]:
    ```
+
 ### 4. Setup EC2 Instance
 1. `Create key pair`
    - I created a key pair locally so that AWS does not know my private key
    - Alternatively, one can create it on AWS console under EC2.
    - This key pair is used to login to EC2 instances on AWS.
    - Using this approach user name and password are not asked.
-   - Execute below command (I did not give any paraphrase.)
+   - execute following command (I did not provide any paraphrase.)
    ```bash
    ssh-keygen -t rsa -b 4096
    ```
@@ -61,7 +63,7 @@ sudo ./aws/install
    ```
 
 2. `Import public key` in AWS
-   - Execute following command
+   - execute following command
    ```bash
    aws ec2 import-key-pair --key-name "ec2-key" --public-key-material fileb://~/.ssh/id_rsa.pub
    ```
@@ -75,7 +77,7 @@ sudo ./aws/install
    - In this example, I am using ubuntu server 20.x version in India with t2.micro with 8 GB storage
    - For k8s learning, I created ubuntu server 20.x version in India with t3a.large (with 32GB Storage), because 8GB default storage was not sufficient for working with minikube
    - Validate AMI IDs before using; these change based on OS and regions etc.
-   - Execute following command
+   - execute following command
    ```bash
    aws ec2 run-instances \
       --image-id ami-0d758c1134823146a \
@@ -91,7 +93,7 @@ sudo ./aws/install
    - Add `my ip` from drop-down
 
 5. `Connect to AWS EC2 instance`
-    - Execute following command
+   - execute following command
    ```bash
    ssh -i <private key file path> ubuntu@<public ip address>
    ```
@@ -103,7 +105,7 @@ sudo ./aws/install
 ](https://aws.amazon.com/ec2/pricing/on-demand/)*
 
 1. `Allocate elastic IP` address so that with each restart new IP is not assigned
-   - Execute following command (it provides a static IP)
+   - execute following command (it provides a static IP)
    ```bash
    aws ec2 allocate-address --domain vpc --network-border-group ap-south-1
    ```
@@ -111,7 +113,7 @@ sudo ./aws/install
    - *this IP address will add to bill even when EC2 instance is down. Need to see about it*
 
 2. `Associate static/elastic IP address` to the EC2 instance/VM
-    - Execute following command
+   - execute following command
    ```bash
    aws ec2 associate-address --instance-id <ec2-istanceid> --public-ip <elastic ip address>
    ```
