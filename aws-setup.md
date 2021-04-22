@@ -1,5 +1,5 @@
 [Go to home](/learning-cloud-k8s)
-# Setup an AWS EC2 instance
+## Setup an AWS EC2 instance
 ### Local machine environment
 *Local environment might matter for some shell commands*
    - Windows 10 Pro
@@ -7,15 +7,16 @@
    - Software installed: WSL 2
    - Software installed: Ubuntu 20.x
 
-## Setup steps
+### Setup steps
 *All commands mentioned in the guide are tried on ubuntu shell*
 
-### 1. Setup AWS Account
+#### 1. Setup AWS Account
 1. Create an AWS account
+   - [AWS Console](https://aws.amazon.com/) > Create an AWS Account
    - User needs an existing email ID
    - Debit or credit card details will be needed to setup an account
 
-### 2. Create an IAM user
+#### 2. Create an IAM user
 2. Add an user
    - It is used by AWS CLI
    - It is created because root user should not be used for security purposes.
@@ -26,7 +27,7 @@
      - Attach existing policy with `AdministratorAccess` (for starters; in longer run, provide only required access)
      - On user creation, `Access key id` and `secret access key` are created. Save these locally for reference
 
-### 3. Setup AWS CLI
+#### 3. Setup AWS CLI
 1. Install AWS CLI on local
    - execute following command
    ```bash 
@@ -48,7 +49,7 @@
    Default output format [None]:
    ```
 
-### 4. Setup EC2 Instance
+#### 4. Setup EC2 Instance
 1. Create key pair
    - I created a key pair locally so that AWS does not know my private key
    - Alternatively, one can create it on AWS console under EC2.
@@ -99,7 +100,7 @@
    ssh -i <private key file path> ubuntu@<public ip address>
    ```
 
-### 5. Assign Static IP to EC2 instance (Optional)
+#### 5. Assign Static IP to EC2 instance (Optional)
 *There is an additonal cost associated with elastic IP [EC2 On-Demand Pricing
 ](https://aws.amazon.com/ec2/pricing/on-demand/)*
 
@@ -120,7 +121,7 @@
    ```
    *Post this association, one can access the EC2 instance using this IP address*
 
-### 6. Maintain EC2 Instance
+#### 6. Maintain EC2 Instance
 1. Check status of an EC2 instance
 ```bash
 aws ec2 describe-instance-status --instance-ids my-instance-id
@@ -136,15 +137,15 @@ aws ec2 start-instances --instance-ids my-instance-id
 aws ec2 stop-instances --instance-ids my-instance-id
 ```
 
-### Notes
+#### Notes
 - For each account created on AWS, a `VPC` is created
 - Each VPC has `three subnets` for `three availability zones` in a `region`
 - Each VPC subnet has a `IPv4 CIDR block` that tells how many IP addresses are available. In total, around `65,536` IP addresses are available
 - `Security Groups` are like `firewall`
 
-### Yet to try
+#### Yet to try
 - Configure `AWS profile` (on local machine) to access different accounts?
 - Check approach to `set security settings of EC2 instance through AWS CLI`
 
-### References
+#### References
 Inspired by a k8s introductory session by [Vijay Dharap](https://github.com/dharapvj). Some steps and commands are added based on my personal experiment.
