@@ -97,8 +97,9 @@
 
 4. Update EC2 instance security group settings [*pending - AWS CLI approach*]
    - AWS Console > EC2 > Instance id > Security Group > Inbound rules
-   - Select `all traffic`
-   - Add `my ip` from drop-down
+   - Select `all traffic` under `type`
+   - Add `my ip` under `Source`
+   - Save rules
 
 #### 5. Login to EC2 instance
 1. Connect to AWS EC2 instance
