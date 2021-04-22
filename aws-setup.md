@@ -54,25 +54,32 @@
    - I created a key pair locally so that AWS does not know my private key
    - This key pair is used to login to EC2 instances on AWS.
    - Using this approach user name and password are not asked.
-   - execute following command (I did not provide any paraphrase.)
+   - execute following command
    ```bash
-   ssh-keygen -t rsa -b 4096
+   ssh-keygen -t rsa -b 4096 -f ~/.ssh/local-ec2-key
+   ```
+   - additional inputs (I did not provide any paraphrase.)
+   ```
+   Generating public/private rsa key pair.
+   Enter passphrase (empty for no passphrase):
+   Enter same passphrase again:
    ```
    - Output
    ```
-   Your identification has been saved in /home/username/.ssh/id_rsa
-   Your public key has been saved in /home/username/.ssh/id_rsa.pub
-   The key fingerprint is: SHA256:abcd usrname@pcname
+   Your identification has been saved in /home/sunilg/.ssh/local-ec2-key
+   Your public key has been saved in /home/sunilg/.ssh/local-ec2-key.pub
+   The key fingerprint is:
+   SHA256:dummysshkeymentionedhereformdeo usernamedummy@pcnamedummy
    ```
 
 2. Import public key in AWS
    - execute following command
    ```bash
-   aws ec2 import-key-pair --key-name "ec2-key" --public-key-material fileb://~/.ssh/id_rsa.pub
+   aws ec2 import-key-pair --key-name "ec2-key" --public-key-material fileb://~/.ssh/local-ec2-key.pub
    ```
-   - *`~/.ssh/id_rsa.pub` is location of my public key that I created in last step*
+   - *`~/.ssh/local-ec2-key.pub` is location of my public key that I created in last step*
    - *`~` points to `/home/username`*
-   - *with `WSL` it was accessible on `\\wsl$\Ubuntu\home\username\.ssh\id_rsa.pub` from windows explorer*
+   - *with `WSL` it was accessible on `\\wsl$\Ubuntu\home\username\.ssh\local-ec2-key.pub` from windows explorer*
 
 3. Create EC2 instance
    - In this example, I am using ubuntu server 20.x version in India with t2.micro with 8 GB storage
