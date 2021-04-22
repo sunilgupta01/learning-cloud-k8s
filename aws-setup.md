@@ -100,13 +100,13 @@ aws ec2 start-instances --instance-ids my-instance-id
 3. Start an EC2 instance
 ```bash
 aws ec2 stop-instances --instance-ids my-instance-id
-
-## Notes
+```
+### Notes
 - For each account created on AWS, a `VPC` is created
 - Each VPC has `three subnets` for `three availability zones` in a `region`
 - Each VPC subnet has a `IPv4 CIDR block` that tells how many IP addresses are available. In total, around `65,536` IP addresses are available
 - `Security Groups` are like `firewall`
 
-## Yet to try
+### Yet to try
 - Configure `AWS profile` (on local machine) to access different accounts?
 - Check approach to `set security settings of EC2 instance through AWS CLI`
