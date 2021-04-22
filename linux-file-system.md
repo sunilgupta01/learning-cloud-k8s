@@ -1,6 +1,6 @@
 # Linux file structure
-## Each of the  directory (which is a file, at the first place) contains important information, required for booting to device drivers, configuration files, etc.
-### Describing briefly the purpose of each directory, we are starting hierarchically.
+#### Each of the  directory (which is a file, at the first place) contains important information, required for booting to device drivers, configuration files, etc.
+#### Describing briefly the purpose of each directory, we are starting hierarchically.
 - /bin : All the executable binary programs (file) required during booting, repairing, files required to run into single-user-mode, and other important, basic commands viz., cat, du, df, tar, rpm, wc, history, etc.
 - /boot : Holds important files during boot-up process, including Linux Kernel.
 - /dev : Contains device files for all the hardware devices on the machine e.g., cdrom, cpu, etc
@@ -20,8 +20,8 @@
 - /tmp :System’s Temporary Directory, Accessible by users and root. Stores temporary files for user and system, till next boot.
 - /usr : Contains executable binaries, documentation, source code, libraries for second level program.
 -	/var : Stands for variable. The contents of this file is expected to grow. This directory contains log, lock, spool, mail and temp files.
-## Exploring Important file, their location and their Usability
-### Linux is a complex system which requires a more complex and efficient way to start, stop, maintain and reboot a system unlike Windows. There is a well defined configuration files, binaries, man pages, info files, etc. for every process in Linux.
+#### Exploring Important file, their location and their Usability
+Linux is a complex system which requires a more complex and efficient way to start, stop, maintain and reboot a system unlike Windows. There is a well defined configuration files, binaries, man pages, info files, etc. for every process in Linux.
 - /boot/vmlinuz : The Linux Kernel file.
 - /dev/hda : Device file for the first IDE HDD (Hard Disk Drive)
 - /dev/hdc : Device file for the IDE Cdrom, commonly
