@@ -82,8 +82,8 @@
    - *with `WSL` it was accessible on `\\wsl$\Ubuntu\home\username\.ssh\local-ec2-key.pub` from windows explorer*
 
 3. Create EC2 instance
-   - In this example, I am using ubuntu server 20.x version in India with t2.micro with 8 GB storage
-   - For k8s learning, I created ubuntu server 20.x version in India with t3a.large (with 32GB Storage), because 8GB default storage was not sufficient for working with minikube
+   - In this example, I am using ubuntu server 20.x version in India with t2.micro (1 vCPU, 1 GB RAM) with 8 GB volume storage (*Do not use same configuration for minikube*)
+   - **For minikube setup, I used t3a.large (2 vCPU, 8 GB RAM) and 32 GB volume storage because 1 vCPU, 1 GB RAM and 8 GB storage are not sufficient to work with minikube**
    - Validate AMI IDs before using; these change based on OS and regions etc.
    - execute following command
    ```bash
