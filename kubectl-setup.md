@@ -1,6 +1,6 @@
 [Go To Home](/learning-cloud-k8s)
 
-[Previous Step - Setup Minikube](/learning-cloud-k8s/setup-minikube)
+[Go To Previous Step (Setup Minikube)](/learning-cloud-k8s/setup-minikube)
 ## Setup kubectl on Ubuntu
 ### Machine environment
 *Local environment might matter for some shell commands*
