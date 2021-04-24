@@ -1,4 +1,6 @@
-[Go to home](/learning-cloud-k8s)
+[Go To Home](/learning-cloud-k8s)
+
+[Go To Previous Step (Docker Setup)](/learning-cloud-k8s/docker-setup)
 ## Setup minikube on Ubuntu
 ### Prerequisites
 - 2 CPUs or more
@@ -31,3 +33,5 @@ minikube start
 Just a couple of steps are mentioned here to show how simple it's to start a minikube cluster. There are many commands, most of which are executed using `kubectl`.
 
 Follow [minikube start](https://minikube.sigs.k8s.io/docs/start/) for details.
+
+[Go To Next Step (Docker Setup)](/learning-cloud-k8s/kubectl-setup)
