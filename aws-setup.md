@@ -85,13 +85,16 @@
    - In this example, I am using ubuntu server 20.x version in India with t2.micro (1 vCPU, 1 GB RAM) with 8 GB volume storage (*Do not use same configuration for minikube*)
    - **For minikube setup, I used t3a.large (2 vCPU, 8 GB RAM) and 32 GB volume storage because 1 vCPU, 1 GB RAM and 8 GB storage are not sufficient to work with minikube**
    - Validate AMI IDs before using; these change based on OS and regions etc.
+   - I also created a tag for assigning VM a name (`vm-mk`) for easy reference.
+   - Note: tags / VM names can have duplicate values
    - execute following command
    ```bash
    aws ec2 run-instances \
       --image-id ami-0d758c1134823146a \
       --instance-type t2.micro \
       --key-name ec2-key --region ap-south-1 \
-      --block-device-mappings Ebs={VolumeSize=8},DeviceName=/dev/sda1
+      --block-device-mappings Ebs={VolumeSize=8},DeviceName=/dev/sda1 \
+      --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=vm-mk}]' 
    ```
    - It creates a machine with an instance Id
 
@@ -108,7 +111,14 @@
      --query "Reservations[*].Instances[*].PublicIpAddress" \
      --output=text
    ```
-
+5. Get Public IP Address by Name tag
+   - replace `instance_id` text with currently created instance id
+   ```bash
+   aws ec2 describe-instances \
+   --filters Name=tag:Name,Values=vm-mk \
+   --query "Reservations[*].Instances[*].PublicIpAddress" \
+   --output=text
+   ```
 #### 5. Login to EC2 instance
 1. Connect to AWS EC2 instance
    - execute following command
