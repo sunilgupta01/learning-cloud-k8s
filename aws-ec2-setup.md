@@ -41,11 +41,11 @@
    ```bash
    aws configure
    ```
-   - It is an interactive command. When prompted provide following details:
+   - It is an interactive command. When prompted provide ID and secret from previous step. Optionally, provide default region. I used `ap-south-1`
    ```
    AWS Access Key ID [None]: <access key id>
    AWS Secret Access Key [None]: <secret access key>
-   Default region name [None]: 
+   Default region name [None]: <region>
    Default output format [None]:
    ```
 
@@ -73,17 +73,16 @@
    ```
 
 2. Import public key in AWS
-   - execute following command
+   - execute following command. Change region based on where you need to setup EC2.
    ```bash
-   aws ec2 import-key-pair --key-name "ec2-key" --public-key-material fileb://~/.ssh/local-ec2-key.pub
+   aws ec2 import-key-pair --key-name "ec2-key" --public-key-material fileb://~/.ssh/local-ec2-key.pub --region ap-south-1
    ```
    - *`~/.ssh/local-ec2-key.pub` is location of my public key that I created in last step*
    - *`~` points to `/home/username`*
    - *with `WSL` it was accessible on `\\wsl$\Ubuntu\home\username\.ssh\local-ec2-key.pub` from windows explorer*
 
 3. Create EC2 instance
-   - In this example, I am using ubuntu server 20.x version in India with t2.micro (1 vCPU, 1 GB RAM) with 8 GB volume storage (*Do not use same configuration for minikube*)
-   - **For minikube setup, I used t3a.large (2 vCPU, 8 GB RAM) and 32 GB volume storage because 1 vCPU, 1 GB RAM and 8 GB storage are not sufficient to work with minikube**
+   - In this example, I have used t3a.large (2 vCPU, 8 GB RAM) and 32 GB volume storage. This is because I procured this EC2 instance for running minikube that needs this much resources. One can choose different configuration based on the requirement**
    - Validate AMI IDs before using; these change based on OS and regions etc.
    - I also created a tag for assigning VM a name (`vm-mk`) for easy reference.
    - Note: tags / VM names can have duplicate values
@@ -91,9 +90,9 @@
    ```bash
    aws ec2 run-instances \
       --image-id ami-0d758c1134823146a \
-      --instance-type t2.micro \
+      --instance-type t3a.large \
       --key-name ec2-key --region ap-south-1 \
-      --block-device-mappings Ebs={VolumeSize=8},DeviceName=/dev/sda1 \
+      --block-device-mappings Ebs={VolumeSize=32},DeviceName=/dev/sda1 \
       --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=vm-mk}]' 
    ```
    - It creates a machine with an instance Id
@@ -104,14 +103,14 @@
    - Add `my ip` under `Source`
    - Save rules
 
-5. Get Public IP Address by instance ID
+5. Get Public IP Address by instance ID (or by name tag as mentioned in next step)
    - replace `instance_id` text with currently created instance id
    ```bash
    aws ec2 describe-instances --instance-ids instance_id \
      --query "Reservations[*].Instances[*].PublicIpAddress" \
      --output=text
    ```
-5. Get Public IP Address by Name tag
+5. Get Public IP Address by Name tag (not required if IP address was checked using previous step)
    - replace `vm-mk` text with the tag assigned to currently created EC2 instance
    ```bash
    aws ec2 describe-instances \
