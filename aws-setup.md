@@ -102,11 +102,12 @@
    - Save rules
 
 5. Get Public IP Address by instance ID
-```
-aws ec2 describe-instances --instance-ids instance_id \
-  --query "Reservations[*].Instances[*].PublicIpAddress" \
-  --output=text
-```
+   - replace `instance_id` text with currently created instance id
+   ```bash
+   aws ec2 describe-instances --instance-ids instance_id \
+     --query "Reservations[*].Instances[*].PublicIpAddress" \
+     --output=text
+   ```
 
 #### 5. Login to EC2 instance
 1. Connect to AWS EC2 instance
