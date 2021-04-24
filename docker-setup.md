@@ -44,9 +44,9 @@ sudo usermod -aG docker $USER
 docker run hello-world
 ```
    - Output, in case of success
-```bash
-Hello from Docker!
-This message shows that your installation appears to be working correctly.
-```
+   ```bash
+   Hello from Docker!
+   This message shows that your installation appears to be working correctly.
+   ```
 
 [Go To Next Step (Minikube Setup)](/learning-cloud-k8s/minikube-setup)
