@@ -34,4 +34,4 @@ Just a couple of steps are mentioned here to show how simple it's to start a min
 
 Follow [minikube start](https://minikube.sigs.k8s.io/docs/start/) for details.
 
-[Go To Next Step (Docker Setup)](/learning-cloud-k8s/kubectl-setup)
+[Go To Next Step (Kubectl Setup)](/learning-cloud-k8s/kubectl-setup)
