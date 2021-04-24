@@ -1,5 +1,7 @@
-[Go to home](/learning-cloud-k8s)
-## Setup minikube on Ubuntu
+[Go To Home](/learning-cloud-k8s)
+
+[Previous Step - Setup Minikube](/learning-cloud-k8s/setup-minikube)
+## Setup kubectl on Ubuntu
 ### Machine environment
 *Local environment might matter for some shell commands*
    - AWS EC2 instance
@@ -8,7 +10,7 @@
 ### Setup steps
 *All commands mentioned in the guide are executed inside post doing SSH into AWS EC2 ubuntu instance*
 
-1. Download and install minikube
+1. Download and install kubectl
 ```bash
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 ```
