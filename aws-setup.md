@@ -119,6 +119,7 @@
    --query "Reservations[*].Instances[*].PublicIpAddress" \
    --output=text
    ```
+
 #### 5. Login to EC2 instance
 1. Connect to AWS EC2 instance
    - execute following command
