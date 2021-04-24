@@ -1,4 +1,6 @@
 [Go to home](/learning-cloud-k8s)
+
+[Go To Previous Step (AWS EC2 Setup)](/learning-cloud-k8s/aws-ec2-setup)
 ## Setup docker on Ubuntu
 ### Machine environment
 *Local environment might matter for some shell commands*
@@ -46,3 +48,5 @@ docker run hello-world
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
 ```
+
+[Go To Next Step (Docker Setup)](/learning-cloud-k8s/docker-setup)
