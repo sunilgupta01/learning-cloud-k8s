@@ -112,7 +112,7 @@
      --output=text
    ```
 5. Get Public IP Address by Name tag
-   - replace `instance_id` text with currently created instance id
+   - replace `vm-mk` text with the tag assigned to currently created EC2 instance
    ```bash
    aws ec2 describe-instances \
    --filters Name=tag:Name,Values=vm-mk \
