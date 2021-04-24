@@ -49,4 +49,4 @@ Hello from Docker!
 This message shows that your installation appears to be working correctly.
 ```
 
-[Go To Next Step (Docker Setup)](/learning-cloud-k8s/docker-setup)
+[Go To Next Step (Minikube Setup)](/learning-cloud-k8s/minikube-setup)
