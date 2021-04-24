@@ -5,7 +5,7 @@ This site is created for self reference while I have been learning cloud and kub
 Please feel free to provide inputs and feedback.
 
 # Setup minikube on AWS EC2 Ubuntu instance
-- [AWS EC2 Setup](aws-setup)
+- [AWS EC2 Setup](aws-ec2-setup)
 - [Docker Setup](docker-setup)
 - [Minikube Setup](minikube-setup)
 - [Kubectl Setup](kubectl-setup)
