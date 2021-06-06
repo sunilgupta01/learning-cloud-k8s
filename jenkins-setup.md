@@ -19,7 +19,7 @@ docker run \
   --volume jenkins-docker-certs:/certs/client \
   --volume jenkins-data:/var/jenkins_home \
   --publish 2376:8080 \
-  jenkins/jenkins
+  jenkins/jenkins:lts
 ```
-
+lts branch - long term support
 3. note down password from container logs
